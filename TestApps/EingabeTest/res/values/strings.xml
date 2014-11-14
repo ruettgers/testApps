@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EingabeTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="textButtonFrau">Frau</string>
+    <string name="textButtonHerr">Herr</string>
+    <string name="textName">Ihr Name</string>
+    <string name="gutenTag">Guten Tag</string>
+    
+    <string name="error_name_missing">Gib einen Namen an.</string>
+    <string name="error_ok">Danke</string>
+    
+
+</resources>
