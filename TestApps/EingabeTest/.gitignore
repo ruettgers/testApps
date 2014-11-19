@@ -12,7 +12,6 @@ gen/
 local.properties
 # eclipse files
 *.pydevproject
-.project
 .metadata
 bin/**
 tmp/**
