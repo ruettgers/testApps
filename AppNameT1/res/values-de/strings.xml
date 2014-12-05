@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppName: Test Nummer 1</string>
+    <string name="hello_world">Guten Tag </string>
+    <string name="action_settings">Settings</string>
+    <string name="b2">Frau</string>
+
+</resources>
