@@ -16,16 +16,21 @@
 
     <Button
         android:id="@+id/button1"
+        android:background="@drawable/red_button"
+       	style="@style/button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="70dp"
         android:onClick="goBack"
-        android:text="@string/ButtonBack" />
+        android:text="@string/ButtonBack"
+ />
 
     <Button
         android:id="@+id/button2"
+        android:background="@drawable/red_button"
+       	style="@style/button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button1"

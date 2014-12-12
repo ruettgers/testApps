@@ -47,6 +47,15 @@ public class MainActivity extends Activity {
 		 showSalve(b.getText());
 		  }
 	 public void goForward(View view) {
+		EditText input = (EditText) findViewById(R.id.editText1);
+		String string = input.getText().toString();
+		
+		Name derName = new Name();
+		
+		 Bundle korb = new Bundle();
+		 korb.putString("Vorname",derName.vorname);
+		 korb.putString("Nachname",derName.nachname);
+
 		 Intent in = new Intent(MainActivity.this,FolgeActivity.class);
 		 startActivity(in);
 		  }
