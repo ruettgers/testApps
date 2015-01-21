@@ -1,5 +1,6 @@
 package de.weg.wi1415.appnameT1;
 
+import de.weg.wi1415.appnameT1.logicalLayer.Name;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,17 +48,32 @@ public class MainActivity extends Activity {
 		 showSalve(b.getText());
 		  }
 	 public void goForward(View view) {
-		EditText input = (EditText) findViewById(R.id.editText1);
+
+		 // Intent zur Folgeactivity
+		 Intent in = new Intent(MainActivity.this,FolgeActivity.class);
+
+		 // Daten lesen
+		 EditText input = (EditText) findViewById(R.id.editText1);
 		String string = input.getText().toString();
 		
+		// Daten behalten
 		Name derName = new Name();
+		derName.setNachname(string);
 		
-		 Bundle korb = new Bundle();
-		 korb.putString("Vorname",derName.vorname);
-		 korb.putString("Nachname",derName.nachname);
-
-		 Intent in = new Intent(MainActivity.this,FolgeActivity.class);
+		// in den Context der Anwendung in java
+		AppContext.getInstance().setDerName(derName);
+		
+		Name elementName = new Name();
+		elementName.setNachname(string);
+		elementName.setVorname("Hugo");
+		AppContext.getInstance().getNamensListe().add(elementName);
+		
+		 //alternative: in den Intent also den Context der Activities
+	     //in.putExtra("person", derName);
+	     
+	     
 		 startActivity(in);
+		 
 		  }
 
 	private void showSalve(CharSequence charSequence) {

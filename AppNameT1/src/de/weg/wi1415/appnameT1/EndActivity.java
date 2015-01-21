@@ -1,17 +1,29 @@
 package de.weg.wi1415.appnameT1;
 
+import de.weg.wi1415.appnameT1.logicalLayer.Name;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class EndActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+        // 2. get person object
+        // aus dem Context des Application layer
+        Name derName = AppContext.getInstance().getDerName();
+
+        // 3. get reference to person textView 
+        TextView namensFeld = (TextView) findViewById(R.id.textView1);
+        namensFeld.setText(derName.getVorname()+" "+derName.getNachname());
+
+		
 		setContentView(R.layout.activity_end);
 	}
 

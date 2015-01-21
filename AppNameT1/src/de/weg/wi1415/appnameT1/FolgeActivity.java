@@ -1,11 +1,13 @@
 package de.weg.wi1415.appnameT1;
 
+import de.weg.wi1415.appnameT1.logicalLayer.Name;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class FolgeActivity extends Activity {
 
@@ -13,6 +15,21 @@ public class FolgeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_folge);
+ 
+        // 1. get passed intent 
+        Intent intent = getIntent();
+ 
+        // 2. get person object
+        // aus dem Context des Application layer
+        Name derName = AppContext.getInstance().getDerName();
+        // alternative from intent (PResentation layer
+        //Name derName = (Name) intent.getSerializableExtra("person");
+ 
+        // 3. get reference to person textView 
+        TextView namensFeld = (TextView) findViewById(R.id.textView1);
+        namensFeld.setText(derName.getVorname()+" "+derName.getNachname());
+ 
+
 	}
 
 	@Override
