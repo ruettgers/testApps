@@ -1,5 +1,7 @@
 package de.weg.wi1415.appnameT1;
 
+import java.util.List;
+
 import de.weg.wi1415.appnameT1.logicalLayer.Name;
 import android.app.Activity;
 import android.content.Intent;
@@ -25,6 +27,8 @@ public class FolgeActivity extends Activity {
         // alternative from intent (PResentation layer
         //Name derName = (Name) intent.getSerializableExtra("person");
  
+        List<Name> namensliste= AppContext.getInstance().namensListe;
+        
         // 3. get reference to person textView 
         TextView namensFeld = (TextView) findViewById(R.id.textView1);
         namensFeld.setText(derName.getVorname()+" "+derName.getNachname());
