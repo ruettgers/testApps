@@ -1,6 +1,11 @@
-package de.weg.wi1415.appnameT1;
+package de.weg.wi1415.appnameT1.view;
 
-import de.weg.wi1415.appnameT1.logicalLayer.Name;
+import de.weg.wi1415.appnameT1.AppContext;
+import de.weg.wi1415.appnameT1.R;
+import de.weg.wi1415.appnameT1.R.id;
+import de.weg.wi1415.appnameT1.R.layout;
+import de.weg.wi1415.appnameT1.R.menu;
+import de.weg.wi1415.appnameT1.model.Name;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +25,7 @@ public class EndActivity extends Activity {
         Name derName = AppContext.getInstance().getDerName();
 
         // 3. get reference to person textView 
-        TextView namensFeld = (TextView) findViewById(R.id.textView1);
+        TextView namensFeld = (TextView) findViewById(R.id.AnredeText);
         namensFeld.setText(derName.getVorname()+" "+derName.getNachname());
 
 		

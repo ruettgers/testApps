@@ -6,63 +6,61 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="de.weg.wi1415.appnameT1.MainActivity" >
+    tools:context="de.weg.wi1415.appnameT1.view.MainActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/AnredeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="26dp"
-        android:text="Mann"
-        android:onClick="onClickButton1"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_marginLeft="76dp"
-        android:layout_toRightOf="@+id/textView1"
-        android:text="@string/b2"
-        android:onClick="onClickButton2" />
-
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/vornameEingabe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/AnredeText"
         android:layout_marginTop="29dp"
-        android:layout_toRightOf="@+id/button1"
+        android:layout_toRightOf="@+id/NachnameLabel"
         android:ems="10" >
 
         <requestFocus />
     </EditText>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editText1"
-        android:layout_alignBottom="@+id/editText1"
-        android:layout_alignRight="@+id/button1"
-        android:text="Name" />
-
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/ButtonWeiter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/editText1"
+        android:layout_alignLeft="@+id/AnredeText"
+        android:layout_below="@+id/vornameEingabe"
         android:layout_marginTop="70dp"
         android:onClick="goForward"
         android:text="@string/ButtonForward" />
+
+    <EditText
+        android:id="@+id/nachnameEingabe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/NachnameLabel"
+        android:layout_alignRight="@+id/vornameEingabe"
+        android:layout_toRightOf="@+id/NachnameLabel"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/VornameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/vornameEingabe"
+        android:layout_alignBottom="@+id/vornameEingabe"
+        android:layout_alignLeft="@+id/NachnameLabel"
+        android:text="@string/LabelVorname" />
+
+    <TextView
+        android:id="@+id/NachnameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ButtonWeiter"
+        android:layout_below="@+id/vornameEingabe"
+        android:layout_marginTop="23dp"
+        android:text="@string/LabelNachname" />
 
 </RelativeLayout>

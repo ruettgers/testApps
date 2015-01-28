@@ -1,25 +1,35 @@
-package de.weg.wi1415.appnameT1;
+package de.weg.wi1415.appnameT1.view;
 
 import java.util.List;
 
-import de.weg.wi1415.appnameT1.logicalLayer.Name;
+import de.weg.wi1415.appnameT1.AppContext;
+import de.weg.wi1415.appnameT1.R;
+import de.weg.wi1415.appnameT1.R.id;
+import de.weg.wi1415.appnameT1.R.layout;
+import de.weg.wi1415.appnameT1.R.menu;
+import de.weg.wi1415.appnameT1.model.Name;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class FolgeActivity extends Activity {
 
+	private ListView mainListView ;  
+	private ArrayAdapter<Name> listAdapter ;  
+	  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_folge);
  
         // 1. get passed intent 
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
  
         // 2. get person object
         // aus dem Context des Application layer
@@ -27,14 +37,26 @@ public class FolgeActivity extends Activity {
         // alternative from intent (PResentation layer
         //Name derName = (Name) intent.getSerializableExtra("person");
  
-        List<Name> namensliste= AppContext.getInstance().namensListe;
-        
+               
         // 3. get reference to person textView 
-        TextView namensFeld = (TextView) findViewById(R.id.textView1);
+        TextView namensFeld = (TextView) findViewById(R.id.AnredeText);
         namensFeld.setText(derName.getVorname()+" "+derName.getNachname());
+        
+        
+       //Liste verarbeiten
+        List<Name> namensliste= AppContext.getInstance().getNamensListe();
+        // Find the ListView resource.   
+        mainListView = (ListView) findViewById( R.id.listeDerNamen);  
+          
+        // Create ArrayAdapter using the list.  
+        listAdapter = new ArrayAdapter<Name>(this, R.layout.list_item_name, namensliste);  
+       
+          
+                      
+        // Set the ArrayAdapter as the ListView's adapter.  
+        mainListView.setAdapter( listAdapter );        
  
-
-	}
+		}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

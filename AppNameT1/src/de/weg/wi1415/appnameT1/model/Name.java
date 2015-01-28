@@ -1,4 +1,4 @@
-package de.weg.wi1415.appnameT1.logicalLayer;
+package de.weg.wi1415.appnameT1.model;
 
 import java.io.Serializable;
 
