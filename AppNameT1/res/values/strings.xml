@@ -10,5 +10,7 @@
     <string name="ButtonForward">Weiter</string>
     <string name="ButtonBack">Zurück</string>
     <string name="title_activity_end">EndActivity</string>
-
+    <string name="LabelNachname">Nachname</string>
+    <string name="LabelVorname">Vorname</string>
+    
 </resources>

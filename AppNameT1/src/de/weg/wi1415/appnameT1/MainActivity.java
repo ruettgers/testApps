@@ -1,6 +1,6 @@
 package de.weg.wi1415.appnameT1;
 
-import de.weg.wi1415.appnameT1.logicalLayer.Name;
+import de.weg.wi1415.appnameT1.model.Name;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -52,21 +52,23 @@ public class MainActivity extends Activity {
 		 // Intent zur Folgeactivity
 		 Intent in = new Intent(MainActivity.this,FolgeActivity.class);
 
-		 // Daten lesen
-		 EditText input = (EditText) findViewById(R.id.editText1);
-		String string = input.getText().toString();
-		
 		// Daten behalten
 		Name derName = new Name();
-		derName.setNachname(string);
+
+		// Daten lesen
+		EditText input = (EditText) findViewById(R.id.vornameEingabe);
+		String vorname = input.getText().toString();
+		derName.setVorname(vorname);
+
+		input = (EditText) findViewById(R.id.nachnameEingabe);
+		String nachname = input.getText().toString();
+		derName.setNachname(nachname);
 		
 		// in den Context der Anwendung in java
 		AppContext.getInstance().setDerName(derName);
 		
-		Name elementName = new Name();
-		elementName.setNachname(string);
-		elementName.setVorname("Hugo");
-		AppContext.getInstance().getNamensListe().add(elementName);
+		// Merken des Namens in anderer Liste
+		AppContext.getInstance().getNamensListe().add(Name.kopiere(derName));
 		
 		 //alternative: in den Intent also den Context der Activities
 	     //in.putExtra("person", derName);
@@ -77,7 +79,7 @@ public class MainActivity extends Activity {
 		  }
 
 	private void showSalve(CharSequence charSequence) {
-		EditText input = (EditText) findViewById(R.id.editText1);
+		EditText input = (EditText) findViewById(R.id.vornameEingabe);
 		String string = input.getText().toString();
 		if (string.length() <= 2)
 		{
@@ -86,7 +88,7 @@ public class MainActivity extends Activity {
 		}
 		
 		
-		TextView anzeige = (TextView) findViewById(R.id.textView1);
+		TextView anzeige = (TextView) findViewById(R.id.AnredeText);
 		anzeige.setText("Guten Tag "+ charSequence + " " + string);
 		
 	}

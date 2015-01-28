@@ -9,7 +9,7 @@
     tools:context="de.weg.wi1415.appnameT1.EndActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/AnredeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
@@ -18,8 +18,8 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/AnredeText"
+        android:layout_below="@+id/AnredeText"
         android:layout_marginTop="73dp"
         android:onClick="goBack"
         android:text="@string/ButtonBack" />

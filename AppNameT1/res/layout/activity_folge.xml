@@ -9,7 +9,7 @@
     tools:context="de.weg.wi1415.appnameT1.FolgeActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/AnredeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
@@ -20,8 +20,8 @@
        	style="@style/button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/AnredeText"
+        android:layout_below="@+id/AnredeText"
         android:layout_marginTop="70dp"
         android:onClick="goBack"
         android:text="@string/ButtonBack"
@@ -39,5 +39,28 @@
         android:layout_marginRight="42dp"
         android:onClick="goForward"
         android:text="@string/ButtonForward" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/button2"
+        android:layout_below="@+id/button1"
+        android:layout_toRightOf="@+id/AnredeText" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listeDerNamen"
+                android:layout_width="216dp"
+                android:layout_height="332dp"
+                tools:listitem="@android:layout/simple_list_item_2" >
+            </ListView>
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
