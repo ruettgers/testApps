@@ -1,11 +1,5 @@
 package de.weg.wi1415.appnameT1.view;
 
-import de.weg.wi1415.appnameT1.AppContext;
-import de.weg.wi1415.appnameT1.R;
-import de.weg.wi1415.appnameT1.R.id;
-import de.weg.wi1415.appnameT1.R.layout;
-import de.weg.wi1415.appnameT1.R.menu;
-import de.weg.wi1415.appnameT1.model.Name;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import de.weg.wi1415.appnameT1.AppContext;
+import de.weg.wi1415.appnameT1.R;
+import de.weg.wi1415.appnameT1.model.Name;
 
 public class EndActivity extends Activity {
 

@@ -24,8 +24,7 @@
         android:layout_below="@+id/AnredeText"
         android:layout_marginTop="70dp"
         android:onClick="goBack"
-        android:text="@string/ButtonBack"
- />
+        android:text="@string/ButtonBack" />
 
     <Button
         android:id="@+id/button2"
@@ -40,13 +39,14 @@
         android:onClick="goForward"
         android:text="@string/ButtonForward" />
 
-            <ListView
-                android:id="@+id/listeDerNamen"
-                android:layout_width="216dp"
-                android:layout_height="332dp"
-                android:layout_alignLeft="@+id/AnredeText"
-                android:layout_below="@+id/button1"
-                tools:listitem="@android:layout/list_item_name" >
-            </ListView>
+    <ListView
+        android:id="@+id/listeDerNamen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/button1" >
+
+    </ListView>
 
 </RelativeLayout>

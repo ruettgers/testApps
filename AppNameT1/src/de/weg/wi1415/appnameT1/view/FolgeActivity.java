@@ -2,12 +2,6 @@ package de.weg.wi1415.appnameT1.view;
 
 import java.util.List;
 
-import de.weg.wi1415.appnameT1.AppContext;
-import de.weg.wi1415.appnameT1.R;
-import de.weg.wi1415.appnameT1.R.id;
-import de.weg.wi1415.appnameT1.R.layout;
-import de.weg.wi1415.appnameT1.R.menu;
-import de.weg.wi1415.appnameT1.model.Name;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +11,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import de.weg.wi1415.appnameT1.AppContext;
+import de.weg.wi1415.appnameT1.R;
+import de.weg.wi1415.appnameT1.model.Name;
+import de.weg.wi1415.appnameT1.view.helper.ArrayAdapterName;
 
 public class FolgeActivity extends Activity {
 
@@ -30,14 +28,14 @@ public class FolgeActivity extends Activity {
  
         // 1. get passed intent 
         //Intent intent = getIntent();
- 
+
         // 2. get person object
         // aus dem Context des Application layer
         Name derName = AppContext.getInstance().getDerName();
         // alternative from intent (PResentation layer
         //Name derName = (Name) intent.getSerializableExtra("person");
  
-               
+            
         // 3. get reference to person textView 
         TextView namensFeld = (TextView) findViewById(R.id.AnredeText);
         namensFeld.setText(derName.getVorname()+" "+derName.getNachname());
@@ -49,9 +47,7 @@ public class FolgeActivity extends Activity {
         mainListView = (ListView) findViewById( R.id.listeDerNamen);  
           
         // Create ArrayAdapter using the list.  
-        listAdapter = new ArrayAdapter<Name>(this, R.layout.list_item_name, namensliste);  
-       
-          
+        listAdapter = new ArrayAdapterName(this, namensliste);  
                       
         // Set the ArrayAdapter as the ListView's adapter.  
         mainListView.setAdapter( listAdapter );        

@@ -1,11 +1,5 @@
 package de.weg.wi1415.appnameT1.view;
 
-import de.weg.wi1415.appnameT1.AppContext;
-import de.weg.wi1415.appnameT1.R;
-import de.weg.wi1415.appnameT1.R.id;
-import de.weg.wi1415.appnameT1.R.layout;
-import de.weg.wi1415.appnameT1.R.menu;
-import de.weg.wi1415.appnameT1.model.Name;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import de.weg.wi1415.appnameT1.AppContext;
+import de.weg.wi1415.appnameT1.R;
+import de.weg.wi1415.appnameT1.model.Name;
 
 public class MainActivity extends Activity {
 

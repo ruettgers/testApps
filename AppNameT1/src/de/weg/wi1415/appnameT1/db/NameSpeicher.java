@@ -13,19 +13,19 @@ public class NameSpeicher implements Serializable   {
 	
 		Name derName;
 		derName = new Name();
-		derName.setNachname("Test1");
+		derName.setNachname("aTest1");
 		derName.setVorname("Vor1");
 		nl.add(derName);
 		derName = new Name();
-		derName.setNachname("Test2");
+		derName.setNachname("bTest2");
 		derName.setVorname("Vor2");
 		nl.add(derName);
 		derName = new Name();
-		derName.setNachname("Test3");
+		derName.setNachname("cTest3");
 		derName.setVorname("Vor3");
 		nl.add(derName);
 		derName = new Name();
-		derName.setNachname("Test4");
+		derName.setNachname("dTest4");
 		derName.setVorname("Vor4");
 		nl.add(derName);
 		for(int i=5; i<10; i++)
