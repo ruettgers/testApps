@@ -43,7 +43,7 @@ public class ArrayAdapterName extends ArrayAdapter<Name> {
 			separator.setVisibility(View.VISIBLE);
 			separator.setText(dieNamen.get(position).getNachname().substring(0, 1));
 		} else if(!dieNamen.get(position).getNachname().substring(0, 1).
-				equals(dieNamen.get(position - 1).getNachname().substring(0, 1))) {
+				equalsIgnoreCase(dieNamen.get(position - 1).getNachname().substring(0, 1))) {
 			separator.setVisibility(View.VISIBLE);
 			separator.setText(dieNamen.get(position).getNachname().substring(0, 1));
 		} else {

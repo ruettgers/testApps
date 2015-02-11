@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import de.weg.wi1415.appnameT1.AppContext;
 import de.weg.wi1415.appnameT1.R;
+import de.weg.wi1415.appnameT1.db.NameSpeicher;
 import de.weg.wi1415.appnameT1.model.Name;
 
 public class MainActivity extends Activity {
@@ -66,11 +67,19 @@ public class MainActivity extends Activity {
 		String nachname = input.getText().toString();
 		derName.setNachname(nachname);
 		
+		if (nachname.length() <= 2)
+		{
+	        Toast.makeText(this, "Bitte einen vernünftigen Namen eingeben.",Toast.LENGTH_LONG).show();
+			        return;
+		}
+		
 		// in den Context der Anwendung in java
 		AppContext.getInstance().setDerName(derName);
-		
+		//nichts
 		// Merken des Namens in anderer Liste
 		AppContext.getInstance().getNamensListe().add(Name.kopiere(derName));
+		NameSpeicher.getInstance().speicherAlle(AppContext.getInstance().getNamensListe());
+		
 		
 		 //alternative: in den Intent also den Context der Activities
 	     //in.putExtra("person", derName);

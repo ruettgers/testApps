@@ -1,42 +1,67 @@
 package de.weg.wi1415.appnameT1.db;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.os.Environment;
 import de.weg.wi1415.appnameT1.model.Name;
 
 public class NameSpeicher implements Serializable   {
 
-	private static final long serialVersionUID = 1L;
+	
+	//Singleton
+	private static NameSpeicher DerNameSpeicher = new NameSpeicher();
+	public static NameSpeicher getInstance()
+	{
+		return DerNameSpeicher;
+	}
 
-	public static void ladeAlle(java.util.List<Name> nl)
+	
+	public void ladeAlle(java.util.List<Name> nl)
+	{
+
+           
+/*            while (in != null) {
+                String[] line = in.split(";");
+                Name name = new Name();
+                name.setVorname(line[0]);
+                name.setNachname(line[1]);
+                               
+                nl.add(name);
+                in = read.readLine();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+*/	}
+	
+	public void speicherAlle(java.util.List<Name> nl)
 	{
 	
-		Name derName;
-		derName = new Name();
-		derName.setNachname("aTest1");
-		derName.setVorname("Vor1");
-		nl.add(derName);
-		derName = new Name();
-		derName.setNachname("bTest2");
-		derName.setVorname("Vor2");
-		nl.add(derName);
-		derName = new Name();
-		derName.setNachname("cTest3");
-		derName.setVorname("Vor3");
-		nl.add(derName);
-		derName = new Name();
-		derName.setNachname("dTest4");
-		derName.setVorname("Vor4");
-		nl.add(derName);
-		for(int i=5; i<10; i++)
-		{
-			derName = new Name();
-			derName.setNachname("Test"+i);
-			derName.setVorname("Vor"+i);
-			nl.add(derName);
-		}
+/*			try {
+			    BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+			        for (Name name:nl) {
+			              writer.write(name.getVorname() );
+			              writer.write(";");
+			              writer.write(name.getNachname());
+			              writer.newLine();
 
+			         }
+			         writer.close();
+			 
+			}
+			catch (IOException e) {
+			e.printStackTrace();
+			}
+*/
 	}
+
 	
-		
 }

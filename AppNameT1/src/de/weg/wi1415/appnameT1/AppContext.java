@@ -1,11 +1,17 @@
 package de.weg.wi1415.appnameT1;
 
+import java.util.Collections;
+
 import de.weg.wi1415.appnameT1.db.NameSpeicher;
 import de.weg.wi1415.appnameT1.model.Name;
 
 public class AppContext {
 	
 	private static AppContext instance = null;
+	
+	private java.util.List<Name> namensListe= null;
+	private Name derName = Name.derLeereName;
+
 	private AppContext()
 	{
 	}
@@ -19,17 +25,17 @@ public class AppContext {
 	}
 	public void init() {
 		namensListe = new java.util.ArrayList<Name>();
-		NameSpeicher.ladeAlle(namensListe);
+		NameSpeicher.getInstance().ladeAlle(namensListe);
+		Collections.sort(namensListe);
 		
 	}
 
-	private java.util.List<Name> namensListe= null;
 	public java.util.List<Name> getNamensListe() {
+		Collections.sort(namensListe);
 		return namensListe;
 	}
 
 
-	private Name derName = Name.derLeereName;
 	public Name getDerName() {
 		return derName;
 	}

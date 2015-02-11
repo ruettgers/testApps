@@ -2,7 +2,7 @@ package de.weg.wi1415.appnameT1.model;
 
 import java.io.Serializable;
 
-public class Name implements Serializable   {
+public class Name implements Serializable, Comparable<Name>   {
 
 	private static final long serialVersionUID = 1L;
 	public static Name derLeereName = new Name();
@@ -40,6 +40,17 @@ public class Name implements Serializable   {
 
 		public void setNachname(String nachname) {
 			this.nachname = nachname;
+		}
+
+		@Override
+		public int compareTo(Name otherName) {
+			
+			int c = this.getNachname().compareToIgnoreCase(otherName.getNachname());
+			if (c!=0)
+			{
+				return c;
+			}
+			return this.getVorname().compareToIgnoreCase(otherName.getVorname());
 		}
 		
 		
