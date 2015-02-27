@@ -1,21 +1,14 @@
 package de.weg.wi1415.appnameT1.db;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.Serializable;
 
-import android.content.Context;
-import android.content.res.AssetManager;
-import android.os.Environment;
+import de.weg.wi1415.appnameT1.AppContext;
 import de.weg.wi1415.appnameT1.model.Name;
 
-public class NameSpeicher implements Serializable   {
+public class NameSpeicher implements Serializable  {
 
-	
+
+	private static final long serialVersionUID = 1L;
 	//Singleton
 	private static NameSpeicher DerNameSpeicher = new NameSpeicher();
 	public static NameSpeicher getInstance()
@@ -24,9 +17,33 @@ public class NameSpeicher implements Serializable   {
 	}
 
 	
-	public void ladeAlle(java.util.List<Name> nl)
+	public void ladeAlle(java.util.List<Name> nl1)
 	{
 
+		Name derName;
+		derName = new Name();
+		derName.setNachname("Test1");
+		derName.setVorname("Vor1");
+		nl1.add(derName);
+		derName = new Name();
+		derName.setNachname("Test2");
+		derName.setVorname("Vor2");
+		nl1.add(derName);
+		derName = new Name();
+		derName.setNachname("Test3");
+		derName.setVorname("Vor3");
+		nl1.add(derName);
+		derName = new Name();
+		derName.setNachname("Test4");
+		derName.setVorname("Vor4");
+		nl1.add(derName);
+		for(int i=5; i<10; i++)
+		{
+			derName = new Name();
+			derName.setNachname("Test"+i);
+			derName.setVorname("Vor"+i);
+			nl1.add(derName);
+		}
            
 /*            while (in != null) {
                 String[] line = in.split(";");
@@ -63,5 +80,5 @@ public class NameSpeicher implements Serializable   {
 */
 	}
 
-	
+
 }

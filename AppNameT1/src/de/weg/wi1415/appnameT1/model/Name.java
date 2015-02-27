@@ -51,6 +51,7 @@ public class Name implements Serializable, Comparable<Name>   {
 				return c;
 			}
 			return this.getVorname().compareToIgnoreCase(otherName.getVorname());
+
 		}
 		
 		

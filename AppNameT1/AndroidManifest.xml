@@ -18,36 +18,31 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="de.weg.wi1415.appnameT1.view.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/title_activity_main_activity"
+            android:parentActivityName="de.weg.wi1415.appnameT1.view.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.weg.wi1415.appnameT1.view.MainActivity" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity2"
-            android:label="@string/title_activity_main_activity2"
+            android:name="de.weg.wi1415.appnameT1.view.FolgeActivity"
+            android:label="@string/title_activity_folge"
             android:parentActivityName="de.weg.wi1415.appnameT1.view.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.weg.wi1415.appnameT1.MainActivity" />
+                android:value="de.weg.wi1415.appnameT1.view.EndActivity" />
         </activity>
         <activity
-            android:name="de.weg.wi1415.appnameT1.view.FolgeActivity"
-            android:label="@string/title_activity_folge"
-            android:parentActivityName="de.weg.wi.eingabetest.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.weg.wi.eingabetest.de.weg.wi1415.appnameT1.view.EndActivity" />
-        </activity>
-        <activity
-            android:name=".EndActivity"
+            android:name="de.weg.wi1415.appnameT1.view.EndActivity"
             android:label="@string/title_activity_end"
             android:parentActivityName="de.weg.wi1415.appnameT1.view.FolgeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.weg.wi1415.appnameT1.FolgeActivity" />
+                android:value="de.weg.wi1415.appnameT1.view.FolgeActivity" />
         </activity>
     </application>
 

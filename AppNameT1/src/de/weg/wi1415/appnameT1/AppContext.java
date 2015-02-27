@@ -7,40 +7,35 @@ import de.weg.wi1415.appnameT1.model.Name;
 
 public class AppContext {
 	
-	private static AppContext instance = null;
-	
-	private java.util.List<Name> namensListe= null;
-	private Name derName = Name.derLeereName;
 
+	private static AppContext instance = new AppContext();
 	private AppContext()
 	{
+		this.init();
 	}
 	public static AppContext getInstance() {
-		if (instance == null)
-		{
-			instance = new AppContext();
-			instance.init();
-		}
 		return instance;
 	}
 	public void init() {
-		namensListe = new java.util.ArrayList<Name>();
 		NameSpeicher.getInstance().ladeAlle(namensListe);
 		Collections.sort(namensListe);
 		
 	}
 
+
+	private java.util.List<Name> namensListe= new java.util.ArrayList<Name>();
 	public java.util.List<Name> getNamensListe() {
 		Collections.sort(namensListe);
 		return namensListe;
 	}
 
 
+	private Name derName = Name.derLeereName;
 	public Name getDerName() {
 		return derName;
 	}
 	public void setDerName(Name neuerName) {
-		derName = neuerName;
+		this.derName = neuerName;
 	}
 	
 
