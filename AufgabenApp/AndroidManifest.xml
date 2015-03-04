@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.weg.projekt.winf135.aufgabenapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+
+       <activity
+            android:name=".SplashActivitiy"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ListeActivity"
+            android:label="@string/title_activity_liste"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.weg.projekt.winf135.aufgabenapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AufgabeHinzuActivity"
+            android:label="@string/title_activity_aufgabe_hinzu"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.weg.projekt.winf135.aufgabenapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ErledigteAufgaben"
+            android:label="@string/title_activity_erledigte_aufgaben"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.weg.projekt.winf135.aufgabenapp.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
