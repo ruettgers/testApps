@@ -31,6 +31,7 @@ public class ArrayAdapterName extends ArrayAdapter<Name> {
 		View row = inflater.inflate(R.layout.list_item_name, parent, false);
 		
 		//ImageView icon = (ImageView) row.findViewById(R.id.iv_gender);
+
 		LinearLayout linLayout = (LinearLayout) row.findViewById(R.id.lin_layout_text);
 		TextView vorname = (TextView) row.findViewById(R.id.vorname_value);
 		TextView nachname = (TextView) row.findViewById(R.id.nachname_value);
@@ -41,14 +42,18 @@ public class ArrayAdapterName extends ArrayAdapter<Name> {
 		
 		if(position == 0) {
 			separator.setVisibility(View.VISIBLE);
-			separator.setText(dieNamen.get(position).getNachname().substring(0, 1));
-		} else if(!dieNamen.get(position).getNachname().substring(0, 1).
-				equals(dieNamen.get(position - 1).getNachname().substring(0, 1))) {
-			separator.setVisibility(View.VISIBLE);
-			separator.setText(dieNamen.get(position).getNachname().substring(0, 1));
-		} else {
-			separator.setVisibility(View.GONE);
+			separator.setText(dieNamen.get(position).getNachname().substring(0, 1).toUpperCase());
+		}
+		else if(dieNamen.get(position).getNachname().substring(0, 1).
+				equalsIgnoreCase(dieNamen.get(position - 1).getNachname().substring(0, 1))) 
+		{
+			separator.setVisibility(View.INVISIBLE);
 			separator.setText("");
+		}
+		else
+		{
+			separator.setVisibility(View.VISIBLE);
+			separator.setText(dieNamen.get(position).getNachname().substring(0, 1).toUpperCase());
 		}
 		
 		return row;
