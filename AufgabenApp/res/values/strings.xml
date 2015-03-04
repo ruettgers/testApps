@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Aufgaben App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_liste">ListeActivity</string>
+    <string name="title_activity_aufgabe_hinzu">AufgabeHinzuActivity</string>
+    <string name="title_activity_erledigte_aufgaben">Erledigte Aufgaben</string>
+    <string name="title_activity_start_splash">StartSplashActivity</string>
+    <string name="AufgabenlisteAnsehen">Aufgabenliste ansehen</string>
+    <string name="ErledigteA">Erledigte Aufgaben</string>
+    <string name="AufgabeHinzu">Aufgabe hinzufügen</string>
+    <string name="Name">Name</string>
+    <string name="Beschreibung">Beschreibung</string>
+    <string name="Alarm">Alarm</string>
+    <string name="Speichern">Speichern</string>
+    
+</resources>

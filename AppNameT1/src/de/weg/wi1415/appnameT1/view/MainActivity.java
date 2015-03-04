@@ -1,4 +1,4 @@
-package de.weg.wi1415.appnameT1;
+package de.weg.wi1415.appnameT1.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import de.weg.wi1415.appnameT1.AppContext;
+import de.weg.wi1415.appnameT1.R;
+import de.weg.wi1415.appnameT1.db.NameSpeicher;
+import de.weg.wi1415.appnameT1.model.Name;
 
 public class MainActivity extends Activity {
 
@@ -47,21 +51,46 @@ public class MainActivity extends Activity {
 		 showSalve(b.getText());
 		  }
 	 public void goForward(View view) {
-		EditText input = (EditText) findViewById(R.id.editText1);
-		String string = input.getText().toString();
-		
-		Name derName = new Name();
-		
-		 Bundle korb = new Bundle();
-		 korb.putString("Vorname",derName.vorname);
-		 korb.putString("Nachname",derName.nachname);
 
+		 // Intent zur Folgeactivity
 		 Intent in = new Intent(MainActivity.this,FolgeActivity.class);
+
+		// Daten behalten
+		Name derName = new Name();
+
+		// Daten lesen
+		EditText input = (EditText) findViewById(R.id.vornameEingabe);
+		String vorname = input.getText().toString();
+		derName.setVorname(vorname);
+
+		input = (EditText) findViewById(R.id.nachnameEingabe);
+		String nachname = input.getText().toString();
+		derName.setNachname(nachname);
+		
+		if (nachname.length() <= 2)
+		{
+	        Toast.makeText(this, "Bitte einen vernünftigen Namen eingeben.",Toast.LENGTH_LONG).show();
+			        return;
+		}
+		
+		// in den Context der Anwendung in java
+		AppContext.getInstance().setDerName(derName);
+		//nichts
+		// Merken des Namens in anderer Liste
+		AppContext.getInstance().getNamensListe().add(Name.kopiere(derName));
+		NameSpeicher.getInstance().speicherAlle(AppContext.getInstance().getNamensListe());
+		
+		
+		 //alternative: in den Intent also den Context der Activities
+	     //in.putExtra("person", derName);
+	     
+	     
 		 startActivity(in);
+		 
 		  }
 
 	private void showSalve(CharSequence charSequence) {
-		EditText input = (EditText) findViewById(R.id.editText1);
+		EditText input = (EditText) findViewById(R.id.vornameEingabe);
 		String string = input.getText().toString();
 		if (string.length() <= 2)
 		{
@@ -70,7 +99,7 @@ public class MainActivity extends Activity {
 		}
 		
 		
-		TextView anzeige = (TextView) findViewById(R.id.textView1);
+		TextView anzeige = (TextView) findViewById(R.id.AnredeText);
 		anzeige.setText("Guten Tag "+ charSequence + " " + string);
 		
 	}

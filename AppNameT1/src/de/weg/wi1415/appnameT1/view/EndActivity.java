@@ -1,4 +1,4 @@
-package de.weg.wi1415.appnameT1;
+package de.weg.wi1415.appnameT1.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,19 +6,33 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import de.weg.wi1415.appnameT1.AppContext;
+import de.weg.wi1415.appnameT1.R;
+import de.weg.wi1415.appnameT1.model.Name;
 
-public class FolgeActivity extends Activity {
+public class EndActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_folge);
+		
+        // 2. get person object
+        // aus dem Context des Application layer
+        Name derName = AppContext.getInstance().getDerName();
+
+        // 3. get reference to person textView 
+        TextView namensFeld = (TextView) findViewById(R.id.AnredeText);
+        namensFeld.setText(derName.getVorname()+" "+derName.getNachname());
+
+		
+		setContentView(R.layout.activity_end);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.folge, menu);
+		getMenuInflater().inflate(R.menu.end, menu);
 		return true;
 	}
 
@@ -35,14 +49,8 @@ public class FolgeActivity extends Activity {
 	}
 	
 	 public void goBack(View view) {
-		 Intent in = new Intent(FolgeActivity.this,MainActivity.class);
-		 startActivity(in);
-		 }
-	 
-	 public void goForward(View view) {
-		 Intent in = new Intent(FolgeActivity.this,EndActivity.class);
+		 Intent in = new Intent(EndActivity.this,FolgeActivity.class);
 		 startActivity(in);
 		 }
 
-	 
 }

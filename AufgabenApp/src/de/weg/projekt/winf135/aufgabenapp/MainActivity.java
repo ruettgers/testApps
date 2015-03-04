@@ -1,4 +1,4 @@
-package de.weg.wi1415.appnameT1;
+package de.weg.projekt.winf135.aufgabenapp;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,18 +7,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class EndActivity extends Activity {
+
+public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_end);
+		setContentView(R.layout.activity_main);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.end, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
@@ -34,9 +35,18 @@ public class EndActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	 public void goBack(View view) {
-		 Intent in = new Intent(EndActivity.this,FolgeActivity.class);
+	 public void goListe(View view) {
+		 Intent in = new Intent(MainActivity.this,ListeActivity.class);
 		 startActivity(in);
 		 }
-
+	 
+	 public void goHinzu(View view) {
+		 Intent in = new Intent(MainActivity.this,AufgabeHinzuActivity.class);
+		 startActivity(in);
+		 }
+	 
+	 public void goErledigt(View view) {
+		 Intent in = new Intent(MainActivity.this,ErledigteAufgaben.class);
+		 startActivity(in);
+		 }
 }

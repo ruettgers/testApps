@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="de.weg.wi1415.appnameT1.MainActivity2" >
+    tools:context="de.weg.projekt.winf135.aufgabenapp.ErledigteAufgaben" >
 
     <item
         android:id="@+id/action_settings"
