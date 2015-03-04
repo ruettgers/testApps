@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PasswordApp1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_normal_oeffnen">NormalOeffnen</string>
+    <string name="title_activity_haupt_menu">HauptMenu</string>
+    <string name="title_activity_passwort_aendern">PasswortAendern</string>
+    <string name="title_activity_account_erstellen">AccountErstellen</string>
+    <string name="title_activity_l">L</string>
+    <string name="title_activity_eingespeichertes_accountaendern">Eingespeichertes Account bearbeiten</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_alle_accounts">AlleAccounts</string>
+    <string name="title_activity_app_beenden">AppBeenden</string>
+    <string name="title_activity_activity_registry">ActivityRegistry</string>
+
+</resources>

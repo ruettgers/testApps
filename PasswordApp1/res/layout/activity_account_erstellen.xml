@@ -1,0 +1,78 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="10dp" >
+
+ <LinearLayout
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     android:paddingBottom="50dp"
+     android:paddingLeft="30dp"
+     android:paddingTop="15dp" >
+
+     <EditText
+         android:id="@+id/editText3"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true"
+         android:layout_centerVertical="true"
+         android:ems="10"
+         android:hint="Name" />
+
+     <EditText
+         android:id="@+id/editText1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="15dp"
+         android:ems="10"
+         android:hint="Benutzername"
+         android:paddingTop="10dp" >
+
+     </EditText>
+
+     <EditText
+         android:id="@+id/editText2"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="15dp"
+         android:layout_weight="0.00"
+         android:ems="10"
+         android:hint="Passwort "
+         android:paddingTop="10dp" >
+
+     </EditText>
+
+     <EditText
+         android:id="@+id/editText4"
+         android:layout_width="wrap_content"
+         android:layout_height="57dp"
+         android:layout_marginTop="20dp"
+         android:layout_weight="0.51"
+         android:ems="10"
+         android:height="80dp"
+         android:hint="Anmerkungen"
+         android:paddingTop="10dp" />
+
+     <Button
+         android:id="@+id/button2"
+         android:layout_width="125dp"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="16dp"
+         android:layout_marginRight="22dp"
+         android:height="50dp"
+         android:text="Speichern"
+         android:width="110dp" />
+
+     <Button
+         android:id="@+id/button1"
+         android:layout_width="126dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="0.04"
+         android:onClick="goBack"
+         android:text="Abbrechen" />
+
+ </LinearLayout>
+
+</ScrollView>
+    
