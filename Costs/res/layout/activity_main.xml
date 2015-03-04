@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.costs.MainActivity" >
+
+    <Button
+        android:id="@+id/EinnahmeBut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/AusgabeBut"
+        android:layout_alignLeft="@+id/AusgabeBut"
+        android:layout_alignRight="@+id/AusgabeBut"
+        android:layout_marginBottom="36dp"
+        android:onClick="goOverview"
+        android:text="Übersicht" />
+
+    <Button
+        android:id="@+id/AusgabeBut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="goFestausgaben"
+        android:text="Festausgaben" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/AusgabeBut"
+        android:layout_alignRight="@+id/EinnahmeBut"
+        android:layout_below="@+id/AusgabeBut"
+        android:layout_marginTop="46dp"
+        android:onClick="goRechner"
+        android:text="Rechner" />
+
+</RelativeLayout>
