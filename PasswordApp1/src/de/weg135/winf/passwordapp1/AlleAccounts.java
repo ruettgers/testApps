@@ -1,18 +1,41 @@
 package de.weg135.winf.passwordapp1;
 
+import java.util.List;
+
+
+import de.weg135.winf.passwordapp1.modell.Account;
+import de.weg135.winf.passwordapp1.modell.AccountAdapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
 public class AlleAccounts extends Activity {
+
+	private ListView mainListView;
+	private AccountAdapter listAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_alle_accounts);
+		
+	       //Liste verarbeiten
+        List<Account> liste= AppContext.getInstance().getAccountListe();
+        // Find the ListView resource.   
+        mainListView = (ListView) findViewById( R.id.listeDerAccounts);  
+          
+        // Create ArrayAdapter using the list.  
+        listAdapter = new AccountAdapter(this, liste);  
+                      
+        // Set the ArrayAdapter as the ListView's adapter.  
+        mainListView.setAdapter( listAdapter );        
+		
+		
+		
 	}
 
 	@Override

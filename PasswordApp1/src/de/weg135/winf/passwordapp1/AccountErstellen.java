@@ -1,11 +1,17 @@
 package de.weg135.winf.passwordapp1;
 
+import java.util.jar.Attributes.Name;
+
+import de.weg135.winf.passwordapp1.modell.Account;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class AccountErstellen extends Activity {
 
@@ -33,11 +39,49 @@ public class AccountErstellen extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
+
 	public void goBack(View view) {
 
-		 Intent in = new Intent(AccountErstellen.this,HauptMenu.class);
-		 startActivity(in);
-		 
-		  }
+		Intent in = new Intent(AccountErstellen.this, HauptMenu.class);
+		startActivity(in);
+
+	}
+
+	public void goSpeichern(View view) {
+
+		// Daten behalten
+		Account derAccount = new Account();
+
+		// Daten lesen
+		EditText input = (EditText) findViewById(R.id.editText3);
+		String name = input.getText().toString();
+		derAccount.setName(name);
+
+		input = (EditText) findViewById(R.id.editText1);
+		String benutzername = input.getText().toString();
+		derAccount.setBenutzername(benutzername);
+
+		input = (EditText) findViewById(R.id.editText2);
+		String passwort = input.getText().toString();
+		derAccount.setPasswort(passwort);
+
+		input = (EditText) findViewById(R.id.editText4);
+		String anmerkungen = input.getText().toString();
+		derAccount.setAnmerkungen(anmerkungen);
+
+		// Prüfe die Eingabe eventuell wieder zurück auf den aktuellen Screen
+		if (name.length() <= 2) {
+			Toast.makeText(this, "Bitte ändern! :P", Toast.LENGTH_LONG).show();
+			return;
+		}
+
+		// Merke die Eingabe in der Liste
+		AppContext.getInstance().getAccountListe().add(derAccount);
+
+		// Wechsle die Ansicht
+		Intent in = new Intent(AccountErstellen.this, AlleAccounts.class);
+		startActivity(in);
+
+	}
+
 }
