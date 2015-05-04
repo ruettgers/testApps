@@ -3,6 +3,8 @@ package de.weg.projekt.winf135.aufgabenapp;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.weg.projekt.winf135.aufgabenapp.model.Aufgabe;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +21,7 @@ public class AufgabeHinzuActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_aufgabe_hinzu);
 	}
-	
+
 	List<String> AufgabenListe = new ArrayList<String>();
 
 	@Override
@@ -29,15 +31,17 @@ public class AufgabeHinzuActivity extends Activity {
 		return true;
 	}
 
-	public void Eintrag (View view){
-	int Name;
-	int Beschreibung;
-	EditText NameEintrag = (EditText)findViewById(R.id.editText1);
-	EditText BeschreibungEintrag = (EditText)findViewById(R.id.editText2);
+	public void Eintrag(View view) {
+		int Name;
+		int Beschreibung;
+		EditText NameEintrag = (EditText) findViewById(R.id.editText1);
+		EditText BeschreibungEintrag = (EditText) findViewById(R.id.editText2);
 	}
-	//AufgabenListe.add(object)--> in geschweifte klammer von oben rein
-	//mit if: wenn eintragung gemacht und tippt auf speichern dann werte in liste speichern
-	
+
+	// AufgabenListe.add(object)--> in geschweifte klammer von oben rein
+	// mit if: wenn eintragung gemacht und tippt auf speichern dann werte in
+	// liste speichern
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
@@ -49,9 +53,32 @@ public class AufgabeHinzuActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	 public void goListeSpeichern(View view) {
-		 Intent in = new Intent(AufgabeHinzuActivity.this,ListeActivity.class);
-		 startActivity(in);
-		 Toast.makeText(this, "Aufgabe wurde gespeichert!" , Toast.LENGTH_SHORT).show();
-		 }
+
+	public void goListeSpeichern(View view) {
+		//Lesen der Eingabedaten
+		Aufgabe dieAufgabe = new Aufgabe();
+		EditText nameEintrag = (EditText) findViewById(R.id.editText1);
+		dieAufgabe.setName(nameEintrag.getText().toString());
+		EditText beschreibungEintrag = (EditText) findViewById(R.id.editText2);
+		dieAufgabe.setBeschreibung(beschreibungEintrag.getText().toString());
+		
+		
+		// Prüfe die Eingabe evt. zurück
+		if (dieAufgabe.getName().length() <= 2)
+		{
+	        Toast.makeText(this, "Bitte einen vernünftigen Namen eingeben.",Toast.LENGTH_LONG).show();
+			        return;
+		}
+
+		// Merke die Eingabe in der Liste
+		AppContext.getInstance().getAufgabenListe().add(dieAufgabe);
+		
+		
+		
+		// Wechsel der Sicht
+		Intent in = new Intent(AufgabeHinzuActivity.this, ListeActivity.class);
+		startActivity(in);
+		Toast.makeText(this, "Aufgabe wurde gespeichert!", Toast.LENGTH_SHORT)
+				.show();
+	}
 }
