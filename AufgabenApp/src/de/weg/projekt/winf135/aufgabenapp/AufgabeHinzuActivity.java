@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.weg.projekt.winf135.aufgabenapp.model.Aufgabe;
-import android.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;

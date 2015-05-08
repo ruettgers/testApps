@@ -2,6 +2,8 @@ package de.weg.projekt.winf135.aufgabenapp.model;
 
 import java.util.List;
 
+
+
 import de.weg.projekt.winf135.aufgabenapp.R;
 import android.content.Context;
 import android.view.LayoutInflater;

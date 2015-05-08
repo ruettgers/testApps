@@ -2,7 +2,7 @@ package de.weg.projekt.winf135.aufgabenapp.model;
 
 public class Aufgabe {
 
-	String name="";
+	String name=" ";
 	String beschreibung="";
 	public String getName() {
 		return name;
