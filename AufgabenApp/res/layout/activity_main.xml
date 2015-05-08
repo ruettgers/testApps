@@ -16,28 +16,28 @@
         android:layout_alignLeft="@+id/button2"
         android:layout_alignRight="@+id/button2"
         android:layout_alignTop="@+id/button2"
-        android:layout_marginTop="81dp"
-        android:text="@string/ErledigteA"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/erledigteaufg"
         android:onClick="goErledigt" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
-        android:text="@string/AufgabenlisteAnsehen" 
-        android:onClick="goListe"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
-        android:layout_centerVertical="true"
-        android:text="@string/AufgabeHinzu" 
-        android:onClick="goHinzu"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="170dp"
+        android:background="@drawable/neueauf"
+        android:onClick="goHinzu" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/aufgabenliste"
+        android:onClick="goListe" />
 
 </RelativeLayout>
