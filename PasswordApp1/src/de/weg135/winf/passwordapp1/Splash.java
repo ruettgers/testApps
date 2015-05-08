@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class splash extends Activity{
+public class Splash extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -12,34 +12,27 @@ public class splash extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
 		Thread backround = new Thread() {
-			public void run(){
-				
+			public void run() {
+
 				try {
-					//4 sekunden
-					sleep(4000);
-					
-					//nach 4 sec ins nächste layout
-					Intent in = new Intent(splash.this,ErstesMalOeffnen.class);
+					// 4 sekunden
+					sleep(4001);
+
+					// nach 4 sec ins nächste layout
+					Intent in = new Intent(Splash.this, ErstesMalOeffnen.class);
 					startActivity(in);
-					
+
 					finish();
-					
+
+				} catch (Exception e) {
+
 				}
-				catch (Exception e){ 
-			
-				
-			
+
 			}
-			
-		}
-		
-	};
-			
-			backround.start();
-}
 
+		};
+
+		backround.start();
+	}
 
 }
-	
-
-
